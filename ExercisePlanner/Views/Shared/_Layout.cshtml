@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+<div id="container">
+	<div id="left-sidebar"> 
+		<div id="logo">
+			
+		</div>
+		<div id="sidebarmenu">
+			<div id="menuButton">
+				@using(Html.BeginForm("Index", "Home", FormMethod.Post)) 
+                        {  @Html.ValidationSummary() <input type="submit" value="Create" /> }
+			</div>
+			<div id="menuButton">
+				@using(Html.BeginForm("Search", "Home", FormMethod.Post)) 
+                        {  @Html.ValidationSummary() <input type="submit" value="Search" /> }
+			</div>
+			<div id="menuButton">
+				@using(Html.BeginForm("Talk", "Home", FormMethod.Post)) 
+                        {  @Html.ValidationSummary() <input type="submit" value="Talk" /> }
+			</div>
+			<div id="menuButton">
+				@using(Html.BeginForm("About", "Home", FormMethod.Post)) 
+                        {  @Html.ValidationSummary() <input type="submit" value="About" /> }
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</div>
+	
+	<div id="main-content"> 
+		<div id="login">
+        @RenderBody()
+		</div>
+	</div>
+</div>
+    
+
+</body>
+</html>
+
+

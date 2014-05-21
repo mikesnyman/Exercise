@@ -1,0 +1,41 @@
+﻿@model ExercisePlanner.Models.ExerciseDayVM
+
+@{
+    ViewBag.Title = "Choose Exercise";
+}
+<h2>Create Exercise Day</h2>
+@using (Html.BeginForm("Add", "Exercise", FormMethod.Get))
+{
+    @Html.ValidationSummary()
+
+    <section class="selectExercise">
+        <div class="row-fluid">
+            <div class="span4">
+                <img src="/assets/images/anatomy2.jpg" alt="anatomy"; height="100%"; width="100%"; />
+                @foreach (var area in Model.AreaList)
+                {
+                    @* the radio buttons *@
+                    <input data-id="@area" class="@area area-radio" type="radio" name="choose"/>
+                    
+                    @* the pop-up exercise list *@
+                    <div class="@area exercises" style="display:none">
+                        <ul> 
+                            @foreach (var exercise in Model.ExercisesByArea[area])
+                            {
+                                <li data-id="@exercise.Id" class="exercise-item">@exercise.ExerciseType</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+            <div id="exercise-list" class="span8">
+
+            </div>
+        </div>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            @Html.ValidationSummary()
+            <input type="submit" value="Cancel" class="btn btn-dark small" />
+        }
+    </section>
+}

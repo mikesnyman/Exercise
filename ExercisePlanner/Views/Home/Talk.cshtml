@@ -1,0 +1,22 @@
+﻿
+
+@{
+    ViewBag.Title = "Fitness App 1.0";
+}
+
+<h2>BlogBlogBlogBlog</h2>
+
+<p>Hey gym rats! Do your trainers suck at getting workout plans to you on time?  <br />
+This app is going to change your muscle bound life</p>
+@*
+@using(Html.BeginForm("Index", "Trainer", FormMethod.Post)) // first two parameters path user returns to
+{
+<p>Lets Login..</p>
+    
+    <input type="text" name="UserName" value="Username"/><br />
+    
+    <input type="text" name="Password" value="Password"/><br />
+
+    @Html.ValidationSummary()
+    <input type="submit" value="Login" />
+}*@

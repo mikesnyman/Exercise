@@ -1,0 +1,28 @@
+﻿
+
+@{
+    ViewBag.Title = "Fitness App 1.0";
+}
+
+<h2>Search for Exercise Plan statistics</h2>
+
+<select>
+  <option value="Exercise">Most Popular Cardio</option>
+  <option value="ExerciseDay">Most Popular Trainer</option>
+  <option value="ExercisePlan">Most Popular Plan</option>
+  <option value="Most Popular">Most Popular Exercise</option>
+</select> 
+
+
+@*
+@using(Html.BeginForm("Index", "Trainer", FormMethod.Post)) // first two parameters path user returns to
+{
+<p>Lets Login..</p>
+    
+    <input type="text" name="UserName" value="Username"/><br />
+    
+    <input type="text" name="Password" value="Password"/><br />
+
+    @Html.ValidationSummary()
+    <input type="submit" value="Login" />
+}*@

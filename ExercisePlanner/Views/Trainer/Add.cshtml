@@ -1,0 +1,38 @@
+﻿@model ExercisePlanner.Model.Trainer
+
+@{
+    ViewBag.Title = "Create Trainer Account";
+}
+
+<section id="trainer" class="trainer">
+    @using(Html.BeginForm("Add", "Trainer", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+
+        <h2>Create Trainer Account</h2>
+        @Html.HiddenFor(m => m.Id)
+        <div>
+            @Html.EditorFor(m => m.Email)
+            Email:
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Name)
+            Name:
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Age)
+            Age:
+        </div>
+        <div>
+            @Html.EditorFor(m => m.Gender)
+            Gender:
+        </div>
+        <input type="submit" value="Add" />
+    }
+
+    @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        <input type="submit" value="Cancel" />
+    }
+</section>

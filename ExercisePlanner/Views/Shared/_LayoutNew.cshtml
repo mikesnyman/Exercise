@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- PACE Loader -->
+    <script src="/assets/js/lib/pace.min.js"></script>
+    <link href="/assets/css/lib/pace.css" rel="stylesheet">
+    <!-- END PACE Loader -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon/favicon.ico" type="image/x-icon">
+
+    <title>Excercise Planner!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="/assets/css/lib/font-awesome.css" rel="stylesheet">
+    <!-- Zocial CSS -->
+    <link href="/assets/css/lib/zocial.css" rel="stylesheet">
+    <!-- Nivo Lightbox CSS -->
+    <link href="/assets/css/lib/nivo-lightbox.css" rel="stylesheet">
+    <link href="/assets/css/lib/nivo-themes/default/default.css" type="text/css" rel="stylesheet" />
+    <!-- STYLE CSS -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- SCHEME CSS -->
+    <link href="/assets/css/scheme/red.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/assets/js/html5shiv.js"></script>
+      <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll">
+    <div id="loader"></div>
+    <div id="main-wrapper">
+        <div id="bg"></div>
+        <div id="sidebar">
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="/assets/images/logo.png" alt="logo garis">
+                    </a>
+                </div>
+                @*"#services"  @using(Html.BeginForm("Index", "Home", FormMethod.Post)){ @Html.ValidationSummary() }  *@
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        @{
+                            var relativeUrl = "";
+                            var className = "sscroll";
+                            var routeData = ViewContext.Controller.ControllerContext.RouteData;
+                            if (routeData.Values["controller"].ToString().ToLower() != "home" || routeData.Values["action"].ToString().ToLower() != "index")
+                            {
+                                relativeUrl = "/home/index";
+                                className = "";
+                            }
+                            
+                        }
+                        <li> <a class="@className" href="@relativeUrl#login">Home/Login</a> 
+                        </li>
+                        <li> <a class="@className" href="@relativeUrl#services">Search</a> 
+                        </li>
+                        <li> <a class="@className" href="@relativeUrl#about">About</a> 
+                        </li>
+                        <li><a class="@className" href="@relativeUrl#blog-front">Blog</a>
+                        </li>
+                        <li><a class="@className" href="@relativeUrl#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+
+        </div>
+        <div id="container">
+
+            @RenderBody()
+        </div>
+        <!-- BEGIN FOOTER -->
+            <footer>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            <strong>GARIS</strong>&nbsp;2014 Created by <a href="javascript:;">DevelPixel</a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <!-- END FOOTER -->
+    </div>
+
+
+    <div class="totop" id="backtotop">
+        <span>
+            <a href="#login" class="first sscroll"><i class="fa fa-angle-up"></i></a>
+            <a href="#login" class="hover sscroll"><i class="fa fa-angle-up"></i></a>
+        </span>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Jquery Source -->
+    <script src="/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- Nivo Light Box Source -->
+    <script src="/assets/js/lib/nivo-lightbox.min.js"></script>
+    <!-- Bootstrap Source -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Superslides Source -->
+    <script src="/assets/js/lib/jquery.superslides.min.js"></script>
+    <!-- Smoothscroll Source -->
+    <script src="/assets/js/lib/smoothscroll.js"></script>
+    <!-- Sudo Slider Source -->
+    <script src="/assets/js/lib/jquery.sudoslider.min.js"></script>
+    <!-- Mixitup Source -->
+    <script src="/assets/js/lib/jquery.mixitup.min.js"></script>
+    <!-- Back to Top Source -->
+    <script src="/assets/js/lib/jquery.backtotop.js"></script>
+    <!-- Backstretch Source -->
+    <script src="/assets/js/lib/jquery.backstretch.min.js"></script>
+    <!-- CarouFredSel Source -->
+    <script src="/assets/js/lib/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <!-- Mobile Responsive Javascript -->
+    <script src="/assets/js/lib/jquery.mobileresponsive.js"></script>
+    <!-- Google Map Source -->
+    <script src="/assets/js/lib/gmap3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <!-- Main Action Javascript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

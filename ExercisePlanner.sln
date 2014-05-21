@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisePlanner.Model", "Model\ExercisePlanner.Model.csproj", "{8127C76A-E314-4061-84C9-00B3972FAD49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisePlanner", "ExercisePlanner\ExercisePlanner.csproj", "{DBC4EF8E-CE9B-4CAD-99EC-AFE1A9D69F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisePlanner.Data", "Data\ExercisePlanner.Data.csproj", "{C4F4F6C9-E18E-4D6E-9B64-0DA15319009B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8127C76A-E314-4061-84C9-00B3972FAD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8127C76A-E314-4061-84C9-00B3972FAD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8127C76A-E314-4061-84C9-00B3972FAD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8127C76A-E314-4061-84C9-00B3972FAD49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC4EF8E-CE9B-4CAD-99EC-AFE1A9D69F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC4EF8E-CE9B-4CAD-99EC-AFE1A9D69F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC4EF8E-CE9B-4CAD-99EC-AFE1A9D69F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC4EF8E-CE9B-4CAD-99EC-AFE1A9D69F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F4F6C9-E18E-4D6E-9B64-0DA15319009B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F4F6C9-E18E-4D6E-9B64-0DA15319009B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F4F6C9-E18E-4D6E-9B64-0DA15319009B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F4F6C9-E18E-4D6E-9B64-0DA15319009B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

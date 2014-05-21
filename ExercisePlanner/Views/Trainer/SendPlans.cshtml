@@ -1,0 +1,25 @@
+﻿@model ExercisePlanner.Model.Trainer
+
+@{
+    ViewBag.Title = "Email These Plans";
+}
+
+@using(Html.BeginForm("Index", "Trainer", FormMethod.Post))
+{
+    <select>
+        <option value="Plans">Send this plan</option>
+        <option value="Plans">Send this plan</option>
+        <option value="Plans">Send this plan</option>
+        <option value="Plans">Send this plan</option>
+    </select> 
+    
+    <select>
+        <option value="Plans">Client A</option>
+        <option value="Plans">Client B</option>
+        <option value="Plans">Client C</option>
+        <option value="Plans">Client D</option>
+    </select> 
+    
+    @Html.ValidationSummary()
+    <input type="submit" value="Send Emails" />
+}

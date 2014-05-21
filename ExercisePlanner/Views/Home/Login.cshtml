@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Create Account";
+}
+
+<section id="login" class="login">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Fill In Account Information</h2>
+
+            @using(Html.BeginForm("Index", "Trainer", FormMethod.Post)) // first two parameters path user returns to
+            {
+                <p>Lets Login..</p>
+    
+                <input type="text" name="UserName" placeholder="Username" class="form-control" /><br />
+    
+                <input type="text" name="Password" placeholder="Password" class="form-control" /><br />
+
+                @Html.ValidationSummary()
+                <input class="btn btn-dark small" type="submit" value="Login" />
+            }
+
+            @using(Html.BeginForm("Add", "Trainer", FormMethod.Get)) // first two parameters path user returns to
+            {
+                @Html.ValidationSummary()
+                <input class="btn btn-dark small"  type="submit" value="Create Account" />
+            }
+
+            @using(Html.BeginForm("DayPlan", "Exercise", FormMethod.Get)) // first two parameters path user returns to
+            {
+                @Html.ValidationSummary()
+                <input class="btn btn-dark small"  type="submit" value="Create Plan" />
+            }
+        </div>
+    </div>
+</section>

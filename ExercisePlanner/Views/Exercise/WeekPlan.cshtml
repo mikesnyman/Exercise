@@ -1,0 +1,136 @@
+﻿@model ExercisePlanner.Model.Exercise
+
+@{
+    ViewBag.Title = "Create Exercise Week";
+}
+<h2>Create Exercise Week</h2>
+@using(Html.BeginForm("Add", "Exercise", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <section class="selectExercise">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="radioBttnImage" style="color: green; font-weight:800;">
+                    <div style="width: 35%; float:left;">
+                        <img src="/assets/images/anatomy2.jpg" alt="anatomy"; height="100%"; width="100%"; />
+                    </div>
+
+                    <div style="width: 10%; float:right"> 
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0"/>
+                        <input class="form-control" type="number" value="0" />
+                       
+                        Total Cycles
+                        <input class="form-control" type="number" value="1" />
+                        
+                        
+                    </div>
+
+                    <div style="width: 20%; float:right;">
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                        <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                          <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                          <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                          <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                          <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                          <br />
+                        <select class="form-control">
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Difficult</option>
+                        </select>
+                    </div>
+
+                    <div style="width: 25%; float:right;">
+                        <input class="form-control" type="text" value="Exe 1"/>
+                        <input class="form-control" type="text" value="Exe 2"/>
+                        <input class="form-control" type="text" value="Exe 3"/>
+                        <input class="form-control" type="text" value="Exe 4"/>
+                        <input class="form-control" type="text" value="Blank"/>
+                        <input class="form-control" type="text" value="Blank"/>
+                        <input class="form-control" type="text" value="Blank"/>
+                        @using(Html.BeginForm("WeekPlan", "Exercise"))
+                        {
+                            @Html.ValidationSummary()
+                            <input type="submit" value="Save Day" class="btn btn-dark small" />
+                        }
+                        
+                        @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+                        {
+                            @Html.ValidationSummary()
+                            <input type="submit" value="Cancel" class="btn btn-dark small" />
+                        }
+                    </div>
+                    <div style="width: 5%; float: right;">
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                        <input class="form-control" type="button" value="-" />
+                    </div>
+                        <input class="tricep" type="radio"/>
+                        <input class="quads" type="radio" />
+                        <input class="calve" type="radio" />
+                        <input class="bicep" type="radio" />
+                        <input class="forearm" type="radio" />
+                        <input class="lats" type="radio" />
+                        <input class="chest" type="radio" />
+                        <input class="neck" type="radio" />
+                </div>
+            </div>
+        </div>
+        @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            @Html.ValidationSummary()
+            <input type="submit" value="Cancel" class="btn btn-dark small" />
+        }
+    </section>
+}
+    @*
+    @using(Html.BeginForm("GetAreaExercises","Exercise", "Neck"))
+    {
+        <select>
+            @foreach( var exercise in Model.Area)
+            {
+                <option>@exercise.ToString()</option>   
+            }
+        </select>
+    }
+
+    *@

@@ -1,0 +1,23 @@
+﻿@model ExercisePlanner.Model.Exercise
+
+<div class="row-fluid">
+    @Html.HiddenFor(m => m.Id)
+    <div class="span1">
+        <input class="" type="button" value="-" />
+    </div>
+    <div class="span5">
+        @Html.TextBoxFor(m => m.ExerciseType, new { @class = "", @readonly = "readonly", @style="width:100%;" })
+    </div>
+    <div class="span4">
+        @Html.DropDownListFor(m => m.Weight,
+            new List<SelectListItem> { 
+                new SelectListItem { Value = "1", Text = "Easy" }, 
+                new SelectListItem { Value = "2", Text = "Medium" }, 
+                new SelectListItem { Value = "1", Text = "Difficult" } 
+            },
+            new { @class = "", @style = "width:100%;" })
+    </div>
+    <div class="span1">
+        @Html.TextBoxFor(m => m.Reps, new { @class = "", @style = "width:100%;" })
+    </div>
+</div>

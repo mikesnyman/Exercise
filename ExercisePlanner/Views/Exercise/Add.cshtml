@@ -1,0 +1,43 @@
+﻿@model ExercisePlanner.Model.Exercise
+
+@{
+    ViewBag.Title = "Add Exercise";
+}
+<h2>Add Exercise</h2>
+@using(Html.BeginForm("Add", "Exercise", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(e => e.Id)
+    <div class="form-control">
+        @Html.EditorFor(e => e.Area)
+        Area:
+    </div>
+    <div class="form-control">
+        @Html.EditorFor(e => e.ExerciseType)
+        Exercise:
+    </div>
+    <div class="form-control">
+        @Html.EditorFor(e => e.Reps)
+        Reps:
+    </div>
+    <div class="form-control">
+        @Html.EditorFor(e => e.Weight)
+        Weight:
+    </div>
+    <div class="form-control">
+        @Html.EditorFor(e => e.Reps)
+        Reps:
+    </div>
+    <div class="form-control">
+        @Html.EditorFor(e => e.Sets)
+        Sets:
+    </div>
+    <br />
+    <input class="btn btn-dark small" type="submit" value="Add" />
+}
+@using(Html.BeginForm("Index", "Trainer", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    <input class="btn btn-dark small type="submit" value="Cancel" />
+}

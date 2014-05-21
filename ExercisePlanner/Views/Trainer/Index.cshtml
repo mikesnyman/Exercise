@@ -1,0 +1,54 @@
+﻿@model ExercisePlanner.Models.TrainerIndexVM
+
+@{
+    ViewBag.Title = "Trainer Home Page";
+}
+
+<h2>Page after a Trainer Logs In</h2>
+<div id="Clients" style="float:left;">
+@using (Html.BeginForm("Add", "Client", FormMethod.Post)) // first two parameters path user returns to
+{
+<p>My Clients</p>
+    <ul>
+        @foreach (var client in Model.Clients)
+        {
+            <li>
+                <div><span>Name: </span>@client.Name</div>
+                <div><span>Age: </span>@client.Age.ToString()</div>
+                <div><a href="@Url.Action("Edit", "Client", new { @id = client.Id })">Edit</a></div>
+            </li>
+        }
+    </ul>
+    @Html.ValidationSummary()
+    <button><a href="@Url.Action("Add", "Client")">Add Client</a></button>
+}
+</div>
+<div id="Plans" style="float:left;">
+@using (Html.BeginForm("Index", "ExercisePlan", FormMethod.Post)) // first two parameters path user returns to
+{
+<p>My Exercise Plans</p>
+    @Html.DropDownList("exerciseplan", Model.ExercisePlans.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).ToList())
+
+    @Html.ValidationSummary()   
+    <button><a href="@Url.Action("Index", "ExercisePlan")">Create Plan</a></button>
+}
+</div>
+
+<div id="Clients"; >
+@using (Html.BeginForm("SendPlans", "Trainer", FormMethod.Post)) // first two parameters path user returns to
+{ @Html.ValidationSummary() <input type="submit" value="Send a Plan to Client(s)" /> }
+</div>
+
+
+
+
+ @*
+    @Html.DropDownList("client", Model.Clients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString()}).ToList())
+    
+    <select>
+      <option value="michael">Michael</option>
+      <option value="Steven">Steven</option>
+      <option value="Lindsay">Lindsay</option>
+      <option value="Tora">Tora</option>
+    </select> 
+    *@

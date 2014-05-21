@@ -1,0 +1,119 @@
+﻿@model IEnumerable<ExercisePlanner.Model.ExercisePlan>
+
+@{
+    ViewBag.Title = "Create Plan";
+}
+
+<h2>Create Plan Page</h2>
+
+<div id="box">
+    Select Exercise to Add to Exercise Day
+    <form action="#">
+    <input type="radio" name="neck" value="area"/>Neck
+    <input type="text" value="dd list of exercises"/><br />
+    <input type="radio" name="arms" value="area"/>Arms
+    <input type="text" value="dd list of exercises"/><br />
+    <input type="radio" name="legs" value="area"/>Legs
+    <input type="text" value="dd list of exercises"/><br />
+    </form>
+    <br />
+    <br />
+    All fields would be empty when first logged in.
+    Save and send option for all exercise types?  
+    <br />
+    <br />
+    <button><a href="@Url.Action("Add", "Exercise")">Create Custom Exercise</a></button>
+</div>
+
+
+
+<div id="box">
+@using(Html.BeginForm("Index", "ExercisePlan", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    <div >
+        Create Exercise Day:<br />
+        <input type="text" value="Exercise 1"/>- <input type="text" value="dd List of exercises" /><br />
+        <input type="text" value="Exercise 2"/>-<br />
+        <input type="text" value="Exercise 3"/>-<br />
+        <input type="text" value="Exercise 4"/>-<br />
+        <input type="text" value="Exercise 5"/>-<br />
+       
+    </div>
+    @Html.ValidationSummary()
+    <input type="submit" value="Save Day" />
+    <input type="submit" value="Save as Plan" />
+}
+</div><br />
+
+<div id="box">
+@using (Html.BeginForm("Index", "ExercisePlan", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    <div >
+        Create Exercise Week:<br />
+        <input type="text" value="template Day 1 name"/>- <input type="text" value="dd List of Days" /><br />
+        <input type="text" value="template Day 2 name"/>-<br />
+        <input type="text" value="template Day 3 name"/>-<br />
+        <input type="text" value="template Day 4 name"/>-<br />
+        <input type="text" value="template Day 5 name"/>-<br />
+        <input type="text" value="template Day 6 name"/>-<br />
+        <input type="text" value="etc all save Days"/>-<br />
+    </div>
+    @Html.ValidationSummary()
+    <input type="submit" value="Save Week" />
+    <input type="submit" value="Save as Plan" />
+}
+</div>
+
+<div id="box">
+@using (Html.BeginForm("Index", "ExercisePlan", FormMethod.Post))
+{
+    <div >
+        Create Exercise Plans:<br />
+        <input type="text" value="template Week 1 name"/> <input type="text" value="dd List of Weeks" />-<br />
+        <input type="text" value="template Week 2 name"/>-<br />
+        <input type="text" value="template Week 3 name"/>-<br />
+        <input type="text" value="template Week 4 name"/>-<br />
+        <input type="text" value="template Week 5 name"/>-<br />
+        <input type="text" value="template Week 6 name"/>-<br />
+        <input type="text" value="template Week 7 name"/>-<br />
+    </div>
+    @Html.ValidationSummary()
+    <input type="submit" value="Save Plan" />
+}
+
+@using (Html.BeginForm("SendPlans", "Trainer", FormMethod.Post))
+{
+    <div>
+    @Html.ValidationSummary()
+    <input type="submit" value="Send Plan" />
+    Must save to send
+    </div>
+}
+</div>
+
+
+
+
+
+
+
+
+@*
+@foreach (var plan in Model)
+{
+    <p>Plan: @plan.Id</p>
+    foreach (var week in plan.ExerciseWeeks)
+    {
+        <p>Week: @week.Id (@week.FocusArea)</p>
+        foreach (var day in week.ExerciseDays)
+        {
+            <p>Day: @day.Id</p>
+            foreach (var e in day.Exercises)
+            {
+                <p>Exercise: @e.Area</p>
+            }
+        }
+    }
+}*@

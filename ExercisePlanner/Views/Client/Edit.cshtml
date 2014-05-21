@@ -1,0 +1,36 @@
+﻿@model ExercisePlanner.Model.Client
+
+@{
+    ViewBag.Title = "Edit Client";
+}
+
+@using(Html.BeginForm("Edit", "Client", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <h2>Edit Client</h2>
+    @Html.HiddenFor(e => e.Id)
+    <div>
+        @Html.EditorFor(e => e.Name)
+        Name:
+    </div>
+    <div>
+        @Html.EditorFor(e => e.Email)
+        Email:
+    </div>
+    <div>
+        @Html.EditorFor(e => e.Age)
+        Age:
+    </div>
+    <div>
+        @Html.EditorFor(e => e.Gender)
+        Gender:
+    </div>
+    <input type="submit" value="Save" />
+}
+
+@using (Html.BeginForm("Index", "Trainer", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    <input type="submit" value="Cancel" />
+}
